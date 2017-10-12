@@ -15,7 +15,6 @@ dispatcher = updater.dispatcher
 bot.setWebhook(webhook_url = "https://willson-kp-bot.herokuapp.com/" + TOKEN)
 
 def start(bot,update):
-	print "start"
 	bot.sendMessage(chat_id = update.message.chat_id,
 					text = "Hello %s! My one and only job is to kp Willson whenever he talks."%update.message.from_user.first_name)
 
@@ -29,3 +28,9 @@ def kp(bot,update):
 
 dispatcher.add_handler(CommandHandler('start', start))
 kp_handler = MessageHandler(Filters.text,kp)
+updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=TOKEN)
+updater.bot.setWebhook("https://vays-meetupbot.herokuapp.com/" + TOKEN)
+updater.idle()
+
