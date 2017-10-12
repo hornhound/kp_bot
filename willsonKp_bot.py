@@ -3,6 +3,7 @@ from telegram.ext import Updater, CommandHandler
 import psycopg2
 import urlparse
 import random
+import os
 #Initialization for webhook
 TOKEN = '373531294:AAG5aWFzIcBLxA-qRg1rK5EkeIklytaIWHs'
 PORT = int(os.environ.get('PORT', '5000'))
@@ -22,7 +23,7 @@ def kp(bot,update):
 	list_of_insults = ["stfu", "FUck you"]
 	if update.message.from_user.username == "Willsoncy":
 		idx = random.randint(0,1)
-		bot.sendMessage(chat_id = update.message.chat_id, text = list_of_insults[idx],reply_to_message_id=update.message.message_id)
+		bot.sendMessage(chat_id = update.message.chat_id, text = list_of_insults[idx]+' '+update.message.from_user.first_name,reply_to_message_id=update.message.message_id)
 
 
 dispatcher.add_handler(CommandHandler('start', start))
