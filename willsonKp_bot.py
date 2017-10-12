@@ -5,7 +5,7 @@ import urlparse
 import random
 import os
 #Initialization for webhook
-TOKEN = '373531294:AAG5aWFzIcBLxA-qRg1rK5EkeIklytaIWHs'
+TOKEN = '459235062:AAHdk58qLQc0MiTkgPgh5c6wPKCXUpn7nNg'
 PORT = int(os.environ.get('PORT', '5000'))
 
 
