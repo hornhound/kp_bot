@@ -20,6 +20,7 @@ def start(bot,update):
 
 
 def kp(bot,update):
+	print "in kp function"
 	list_of_insults = ["stfu", "FUck you"]
 	bot.sendMessage(chat_id = update_message.chat_id, text = update.message.from_user.username)
 	if update.message.from_user.username == "Willsoncy":
