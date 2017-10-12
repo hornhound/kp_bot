@@ -21,6 +21,7 @@ def start(bot,update):
 
 def kp(bot,update):
 	print "in kp function"
+	print update.message.from_user.username
 	list_of_insults = ["stfu", "FUck you"]
 	bot.sendMessage(chat_id = update.message.chat_id, text = update.message.from_user.first_name)
 	bot.sendMessage(chat_id = update_message.chat_id, text = update.message.from_user.username)
