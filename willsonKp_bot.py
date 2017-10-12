@@ -21,7 +21,7 @@ def start(bot,update):
 
 def kp(bot,update):
 	list_of_insults = ["stfu", "FUck you"]
-	bot.sendMessage(chat_id = update_message.chat_id, text = update.message.from_user.user_name)
+	bot.sendMessage(chat_id = update_message.chat_id, text = update.message.from_user.username)
 	if update.message.from_user.username == "Willsoncy":
 		idx = random.randint(0,1)
 		bot.sendMessage(chat_id = update.message.chat_id, text = list_of_insults[idx]+' '+update.message.from_user.first_name,reply_to_message_id=update.message.message_id)
@@ -29,6 +29,7 @@ def kp(bot,update):
 
 dispatcher.add_handler(CommandHandler('start', start))
 kp_handler = MessageHandler(Filters.text,kp)
+dispatcher.add_handler(kp_handler)
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
