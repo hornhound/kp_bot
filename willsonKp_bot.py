@@ -23,7 +23,7 @@ def kp(bot,update):
 	username = update.message.from_user.username
 	list_of_insults = ["stfu", "FUck you"]
 	bot.sendMessage(chat_id = update.message.chat_id, text = username)
-	if update.message.from_user.username == "Willsoncy":
+	if update.message.from_user.username == "benghaun":
 		idx = random.randint(0,1)
 		bot.sendMessage(chat_id = update.message.chat_id, text = list_of_insults[idx]+' '+update.message.from_user.first_name,reply_to_message_id=update.message.message_id)
 
